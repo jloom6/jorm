@@ -42,6 +42,7 @@ type Interface interface {
 	Joins(query string, args ...interface{}) Interface
 	Scopes(funcs ...func(*gorm.DB) *gorm.DB) Interface
 	Unscoped() Interface
+	Assign(attrs ...interface{}) Interface
 	Attrs(attrs ...interface{}) Interface
 	First(out interface{}, where ...interface{}) Interface
 	Take(out interface{}, where ...interface{}) Interface
