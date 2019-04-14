@@ -17,6 +17,8 @@ type Interface interface {
 	Value() interface{}
 	Error() error
 	RowsAffected() int64
+	// Allow users access to the underlying gorm DB
+	GetGormDB() *gorm.DB
 	// Wrap the functions
 	New() Interface
 	Close() error

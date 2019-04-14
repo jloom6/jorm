@@ -371,7 +371,7 @@ func (db *DB) HasTable(value interface{}) bool {
 
 // AutoMigrate run auto migration for given models, will only add missing fields, won't delete/change current data
 func (db *DB) AutoMigrate(values ...interface{}) Interface {
-	return &DB{db: db.db.AutoMigrate(values)}
+	return &DB{db: db.db.AutoMigrate(values...)}
 }
 
 // ModifyColumn modify column to type
@@ -450,4 +450,9 @@ func (db *DB) AddError(err error) error {
 // GetErrors get happened errors from the db
 func (db *DB) GetErrors() []error {
 	return db.db.GetErrors()
+}
+
+// GetGormDB returns the underlying gorm DB
+func (db *DB) GetGormDB() *gorm.DB {
+	return db.db
 }

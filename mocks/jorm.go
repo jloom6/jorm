@@ -95,6 +95,22 @@ func (mr *MockInterfaceMockRecorder) AddUniqueIndex(arg0 interface{}, arg1 ...in
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AddUniqueIndex", reflect.TypeOf((*MockInterface)(nil).AddUniqueIndex), varargs...)
 }
 
+// Assign mocks base method
+func (m *MockInterface) Assign(arg0 ...interface{}) jorm.Interface {
+	varargs := []interface{}{}
+	for _, a := range arg0 {
+		varargs = append(varargs, a)
+	}
+	ret := m.ctrl.Call(m, "Assign", varargs...)
+	ret0, _ := ret[0].(jorm.Interface)
+	return ret0
+}
+
+// Assign indicates an expected call of Assign
+func (mr *MockInterfaceMockRecorder) Assign(arg0 ...interface{}) *gomock.Call {
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Assign", reflect.TypeOf((*MockInterface)(nil).Assign), arg0...)
+}
+
 // Association mocks base method
 func (m *MockInterface) Association(arg0 string) *gorm.Association {
 	ret := m.ctrl.Call(m, "Association", arg0)
@@ -468,6 +484,18 @@ func (m *MockInterface) GetErrors() []error {
 // GetErrors indicates an expected call of GetErrors
 func (mr *MockInterfaceMockRecorder) GetErrors() *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetErrors", reflect.TypeOf((*MockInterface)(nil).GetErrors))
+}
+
+// GetGormDB mocks base method
+func (m *MockInterface) GetGormDB() *gorm.DB {
+	ret := m.ctrl.Call(m, "GetGormDB")
+	ret0, _ := ret[0].(*gorm.DB)
+	return ret0
+}
+
+// GetGormDB indicates an expected call of GetGormDB
+func (mr *MockInterfaceMockRecorder) GetGormDB() *gomock.Call {
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetGormDB", reflect.TypeOf((*MockInterface)(nil).GetGormDB))
 }
 
 // Group mocks base method
